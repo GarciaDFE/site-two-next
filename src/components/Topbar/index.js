@@ -3,7 +3,7 @@ import { SectionTopbar,
          ItemTopbar,
          IconPhone,
          IconEmail,
-         IconCalender } from "./_styles"
+         IconCalender } from "./styles"
 
 const TopBar = () => {
 

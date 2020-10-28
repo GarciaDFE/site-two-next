@@ -1,15 +1,14 @@
 import Topbar from "../Topbar"
 import Header from "../Header"
+import Footer from "../Footer"
 
 const Template = ({ children }) => {
    return (
       <>
          <Topbar />
          <Header />
-          {children}
-          <footer>
-             <h3>Rodapé das páginas</h3>
-          </footer>
+            {children}
+         <Footer />
       </>
    )
 }

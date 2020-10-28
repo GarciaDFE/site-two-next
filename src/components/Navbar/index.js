@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Link from "next/link"
 
 import { MainNav, 
@@ -9,7 +9,7 @@ import { MainNav,
          ListSubItem, 
          SubItem, 
          SubAction, 
-         IconSubAction } from "./_styles"
+         IconSubAction } from "./styles"
 
 const Navbar = ({ isActive=false, className }) => {
 
@@ -40,7 +40,7 @@ const Navbar = ({ isActive=false, className }) => {
             </Link>
          </Item>
          <Item onMouseOver={handleLeave}>
-            <Link href="/about">
+            <Link href="/sobre">
                <Action>Empresa</Action>
             </Link>
          </Item>
@@ -90,7 +90,7 @@ const Navbar = ({ isActive=false, className }) => {
             </Link>
          </Item>
          <Item onMouseOver={handleLeave}>
-            <Link href="/contact">
+            <Link href="/contatos">
                <Action>Contatos</Action>
             </Link>
          </Item>
