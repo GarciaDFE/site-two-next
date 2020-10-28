@@ -1,10 +1,19 @@
 import styled from 'styled-components'
+import Template from "../src/components/Template"
 
 const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
+  font-family: ${({ theme }) => theme.font.primary};
+  font-weight: 700;
+  font-size: 4rem;
+  color: ${({ theme }) => theme.color.primaryBase};
 `
 
-export default function Home() {
-  return <Title>My page</Title>
+const HomePage = () => {
+  return (
+    <Template>
+      <Title>Home page</Title>
+    </Template>
+  )
 }
+
+export default HomePage
