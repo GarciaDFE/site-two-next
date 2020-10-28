@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import Brand from "../../objects/Brand"
-import NavBar from "../../components/NavBar"
+import NavBar from "../../components/Navbar"
 
 import { Section, ContainerHeader, NavButtonMenu } from "./_styles"
 
