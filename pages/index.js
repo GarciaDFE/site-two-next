@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from "styled-components"
 import Template from "../src/components/Template"
 
 const Title = styled.h1`

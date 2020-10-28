@@ -7,6 +7,4 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.color.secondyBase};
 `
 
-export {
-   Title
-}
+export default Title

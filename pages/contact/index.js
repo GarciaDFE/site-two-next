@@ -1,5 +1,6 @@
-import { Title } from "./_styles"
 import Template from "../../src/components/Template"
+
+import Title from "./_styles"
 
 const ContactPage = () => {
    return (      
