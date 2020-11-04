@@ -1,38 +1,40 @@
-import Template from "../../src/components/Template"
+import useSWR from "swr"
 
+import Template from "../../src/components/Template"
 import RepresentativesSection from "../../src/sections/RepresentativesSection"
 import TitleSection from "../../src/objects/TitleSection"
 import AccordionItem from "../../src/components/AccordionItem"
 
-import { areas } from "./_content"
+const fetcher = (url) => fetch(url).then((res) => res.json())
 
 const Representantes = () => {
 
-   return (
+   const { data, error } = useSWR("/api/repres", fetcher)
+   if (error) return <div>Falha na leitura dos dados</div>
+   if (!data) return <div>Carregando dados...</div>
+
+ return (
       <Template>
          <TitleSection 
             className="-variant"
             title="Nossos Representantes por Região" 
          />
-         {areas.map((area, index) => (
+         {data.map((area) => (
             <RepresentativesSection 
-               key={index}
+               key={area.id}
                titleRegion={area.titleRegion}
                subtitleRegion={area.subtitleRegion}
-               className={index % 2 === 0 ? "-variant" : ""}
+               className={area.id % 2 === 0 ? "-variant" : ""}
             >
-               {area.regions.map((region, index) => (
-                  <AccordionItem
-                     key={index}
-                     title={region.title}
-                     subtitle={region.subtitle}
-                     text={region.text}
-                  />
-               ))}
+               <AccordionItem
+                  title={area.regions.title}
+                  subtitle={area.regions.subtitle}
+                  text={area.regions.text}
+               />
             </RepresentativesSection>
          ))}
       </Template>
-   )
+   )   
 }
 
 export default Representantes

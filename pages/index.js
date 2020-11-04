@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import Template from "../src/components/Template"
 
+import BannerCarousel from "../src/components/BannerCarousel"
+
 const Title = styled.h1`
   font-family: ${({ theme }) => theme.font.primary};
   font-weight: 700;
@@ -11,7 +13,7 @@ const Title = styled.h1`
 const HomePage = () => {
   return (
     <Template>
-      <Title>Home page</Title>
+      <BannerCarousel element="glide-hero" />
     </Template>
   )
 }

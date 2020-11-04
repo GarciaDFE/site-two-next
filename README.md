@@ -17,3 +17,9 @@ Include popular icons in your React projects easily with react-icons, which util
 ```bash
 yarn add react-icons
 ```
+
+- **Glider JS**
+Is a dependency-free JavaScript ES6 slider and carousel. It’s lightweight, flexible and fast. Designed to slide. No less, no more.
+```bash
+yarn add @glidejs/glide
+```

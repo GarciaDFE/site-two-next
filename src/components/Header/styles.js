@@ -15,7 +15,7 @@ const Section = styled.header`
    margin: 0;
    padding: 0;
    z-index: 15;
-   transition: height 300ms ease-out;
+   transition: all 300ms ease-out;
    background-color: ${props => props.theme.color.grayClear};
  
    ${media.greaterThan("lg")`

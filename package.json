@@ -7,13 +7,16 @@
     "start": "next start"
   },
   "dependencies": {
+    "@glidejs/glide": "^3.4.1",
     "next": "latest",
+    "nextjs-progressbar": "^0.0.7",
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-icons": "^3.11.0",
     "react-is": "^16.8.0",
     "styled-components": "^5.0.0",
-    "styled-media-query": "^2.1.2"
+    "styled-media-query": "^2.1.2",
+    "swr": "^0.3.8"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.8.0"
