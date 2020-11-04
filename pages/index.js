@@ -1,19 +1,17 @@
-import styled from "styled-components"
 import Template from "../src/components/Template"
 
 import BannerCarousel from "../src/components/BannerCarousel"
-
-const Title = styled.h1`
-  font-family: ${({ theme }) => theme.font.primary};
-  font-weight: 700;
-  font-size: 4rem;
-  color: ${({ theme }) => theme.color.primaryBase};
-`
+import CompanySection from "../src/sections/CompanySection"
+import ProductLineSection from "../src/sections/ProductLineSection"
+import BudgetSection from "../src/sections/BudgetSection"
 
 const HomePage = () => {
   return (
     <Template>
       <BannerCarousel element="glide-hero" />
+      <CompanySection />
+      <ProductLineSection />
+      <BudgetSection />
     </Template>
   )
 }

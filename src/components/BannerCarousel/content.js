@@ -6,7 +6,7 @@ const banners = [
       subtitle: "Mais de 50 anos de tradição em qualidade",
       description: "Soluções em equipamentos eletromecânicos e painéis elétricos de baixa tensão e especializada no fornecimento de soluções sob encomenda para empresas e consultores dos setores de siderurgia, mineração, papel e celulose, ferrovias e engenharia. Empresa certificada na norma ABNT NBR ISO 9001.",
       button_label: "Saiba mais",
-      button_target: "empresa/"
+      button_target: "sobre/"
    },
    {
       url_image: "/banner-carousel/img2-produto-eletrosil.jpg",

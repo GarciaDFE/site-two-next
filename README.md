@@ -23,3 +23,15 @@ Is a dependency-free JavaScript ES6 slider and carousel. It’s lightweight, fle
 ```bash
 yarn add @glidejs/glide
 ```
+
+- **SWR**
+Is a React Hooks library for remote data fetching.
+```bash
+yarn add swr
+```
+
+- **Next Progressbar**
+A simple Next.js progressbar component using NProgress.
+```bash
+yarn add nextjs-progressbar
+```
