@@ -1,13 +1,22 @@
-// MODELO STATIC SITE GENERATION (precisa indexação Google)
-// NÃO EXIGIDO JAVASCRIPT HABILITADO
-// TODO HTML/CSS/JS PRONTO SEM NECESSIDADE DE CHAMADAS A APIs
+// MODELO CLIENT SIDE RENDER - FETCHING (não precisa indexação Google)
+// EXIGIDO JAVASCRIPT HABILITADO
+// SUGERIDO USAR PARA TESTAR ACESSOS A DADOS LOCALMENTE
+
+import useSWR from "swr"
 
 import Template from "../../src/components/Template"
 import RepresentativesSection from "../../src/sections/RepresentativesSection"
 import TitleSection from "../../src/objects/TitleSection"
+
 import AccordionItem from "../../src/components/AccordionItem"
 
-const Representantes = ({ repres }) => {
+const fetcher = (url) => fetch(url).then((res) => res.json())
+
+const Representantes = () => {
+
+   const { data, error } = useSWR("http://localhost:3333/representantes", fetcher)
+   if (error) return <div>Falha na leitura dos dados</div>
+   if (!data) return <div>Carregando dados...</div>
 
  return (
       <Template>
@@ -15,7 +24,7 @@ const Representantes = ({ repres }) => {
             className="-variant"
             title="Nossos Representantes por Região" 
          />
-         {repres.map((area) => (
+         {data.map((area) => (
             <RepresentativesSection 
                key={area.id}
                titleRegion={area.titleRegion}
@@ -33,14 +42,5 @@ const Representantes = ({ repres }) => {
    )   
 }
 
-export const getStaticProps = async (context) => {
-   const response = await fetch("http://localhost:3333/representantes")
-   const repres = await response.json()
-
-   return {
-      props: { repres },
-   }
-
-}
 
 export default Representantes

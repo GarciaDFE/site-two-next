@@ -1,6 +1,6 @@
-// MODELO STATIC SITE GENERATION (precisa indexação Google)
-// NÃO EXIGIDO JAVASCRIPT HABILITADO
-// TODO HTML/CSS/JS PRONTO SEM NECESSIDADE DE CHAMADAS A APIs
+// MODELO SERVER SIDE RENDER - FETCHING (precisa indexação Google)
+// PARA OS DADOS NÃO EXIGE JAVASCRIPT HABILITADO
+// PÁGINA INTEIRA LIBERADA APÓS TODOS DADOS BUSCADOS E LIDOS 
 
 import Template from "../../src/components/Template"
 import RepresentativesSection from "../../src/sections/RepresentativesSection"
@@ -33,12 +33,12 @@ const Representantes = ({ repres }) => {
    )   
 }
 
-export const getStaticProps = async (context) => {
+export const getServerSideProps = async () => {
    const response = await fetch("http://localhost:3333/representantes")
    const repres = await response.json()
 
    return {
-      props: { repres },
+      props: { repres }
    }
 
 }

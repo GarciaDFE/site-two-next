@@ -35,3 +35,14 @@ A simple Next.js progressbar component using NProgress.
 ```bash
 yarn add nextjs-progressbar
 ```
+
+- **JSON Server**
+A simple fake server local for test access to API
+Create example data file "server.json" and run without install dependency.
+example port: 3333
+-w: watch update file json
+-d: delay in miliseconds for fecth simulate access
+```bash
+npx json-server server.json -p 3333 -w -d 2000
+```
+
