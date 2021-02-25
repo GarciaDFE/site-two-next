@@ -35,6 +35,7 @@ const Representantes = ({ repres }) => {
 
 export const getStaticProps = async (context) => {
    const response = await fetch(`${process.env.API_URL}/representantes`)
+   console.log("ENV: ", process.env.API_URL)
    const repres = await response.json()
 
    return {
