@@ -34,13 +34,11 @@ const Representantes = ({ repres }) => {
 }
 
 export const getStaticProps = async (context) => {
-   const response = await fetch(`${process.env.API_URL}/representantes`)
+   const response = await fetch("http://localhost:3333/representantes")
    const repres = await response.json()
 
    return {
-      props: { 
-         repres 
-      },
+      props: { repres },
    }
 
 }

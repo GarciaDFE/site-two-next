@@ -1,6 +1,7 @@
 // MODELO STATIC SITE GENERATION (precisa indexação Google)
 // NÃO EXIGIDO JAVASCRIPT HABILITADO
 // TODO HTML/CSS/JS PRONTO SEM NECESSIDADE DE CHAMADAS A APIs
+// REVALIDATE PARA GERAR CONTEÚDO ESTÁTICO A CADA X segundos 
 
 import Template from "../../src/components/Template"
 import RepresentativesSection from "../../src/sections/RepresentativesSection"
@@ -34,13 +35,12 @@ const Representantes = ({ repres }) => {
 }
 
 export const getStaticProps = async (context) => {
-   const response = await fetch(`${process.env.API_URL}/representantes`)
+   const response = await fetch("http://localhost:3333/representantes")
    const repres = await response.json()
 
    return {
-      props: { 
-         repres 
-      },
+      props: { repres },
+      revalidate: 10,
    }
 
 }
